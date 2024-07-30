@@ -1,8 +1,8 @@
 body {
-    background-color: lightgreen
+    background-color: lightgreen;
 }
 body {
-    color: blue
+    color: blue;
 }  
 body {
     font-family: Arial, Helvetica, sans-serif;
@@ -28,7 +28,7 @@ h2 {
     font-weight: bold;
     color: darkorange;
 }
-h1{
+h1 {
     text-transform: uppercase;
     letter-spacing: 2px;
 }
@@ -47,7 +47,7 @@ img {
     list-style-type: none;
 }
 #Connect a {
-    color:darkgreen
+    color:darkgreen;
     text-decoration: none;
     font-weight: bold;
     display: block;
