@@ -1,0 +1,58 @@
+body {
+    background-color: lightgreen
+}
+body {
+    color: blue
+}  
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+}
+section {
+    margin: 20px 0;
+    padding: 20px;
+    border: 1px solid burlywood;
+}
+#About {
+    text-align: center;
+}
+h1 {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: darkred;
+}
+h2 {
+    font-size: 1.75em;
+    font-weight: bold;
+    color: darkorange;
+}
+h1{
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+img {
+    max-width: 150px;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto;
+}
+#Experrience li {
+    background-color: black;
+    border: 1px solid #e71313;
+    padding: 10px;
+    margin: 5px  0;
+    border-radius: 5px;
+    list-style-type: none;
+}
+#Connect a {
+    color:darkgreen
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    margin: 5px 0;
+}
+#Connect a:hover {
+    text-decoration: underline;
+}
