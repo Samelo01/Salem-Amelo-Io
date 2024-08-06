@@ -46,13 +46,153 @@ img {
     border-radius: 5px;
     list-style-type: none;
 }
-#Connect a {
+#Experience {
+    display:flex;
+    flex-direction: column;
+    padding: 20px;
+}
+.Experience-item {
+    display:flex;
+    align-items: center;
+    padding: 10px;
+    gap: 20px;
+}
+.Experience-item h3 {
+    flex: 1;
+    margin: 0;
+}
+.Experience-item .dates {
+    flex: 1;
+    text-align: right;
+    margin: 0;
+    margin-right: 80px;
+}
+.Experience-item p {
+    flex: 20;
+    margin: 0;
+    margin-left: 80px
+}
+
+body, h2, h3, p, span {
+    margin: 0;
+    Padding: 0;
+    box-sizing: border-box;
+}
+nav {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background-color: blueviolet;
+    padding: 10px 0;
+}
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: black;
+}
+nav ul li {
+    float: left;
+}
+nav ul li {
+    display: block;
+    color: aqua;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+nav ul li a:hover {
+    background-color: burlywood;
+}
+
+#Experience {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+.Experience-item {
+    padding: 10px 0;
+    border-bottom: 1px brown;
+    margin-bottom: 10px;
+}
+.Experience-item .header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+.Experience-item h3 {
+    flex: 2;
+    margin: 0;
+}
+.Experience-item .dates {
+    flex: 1;
+    text-align: right;
+    margin: 0 20px;
+}
+.Experience-item p {
+    flex: 3;
+    margin: 0;
+    padding-left: 20px;
+}
+
+
+/* #Connect a {
     color:darkgreen;
     text-decoration: none;
     font-weight: bold;
     display: block;
     margin: 5px 0;
-}
+} */
 #Connect a:hover {
     text-decoration: underline;
+}
+
+#Connect {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+/* #Connect a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #333;
+    color: white;
+    text-decoration: none;
+} */
+
+#connect {
+    display: flex;
+    justify-content: center;
+    gap: 15px; 
+    padding: 20px;
+}
+.icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #333;
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+}
+.icon:hover {
+    background-color: chocolate;
+}
+.linkedin {
+    background-color: rgb(62, 62, 240);
+}
+.email {
+    background-color: rgb(17, 196, 121);
+}
+.github {
+    background-color: black;
 }
