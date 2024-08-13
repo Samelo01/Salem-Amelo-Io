@@ -196,3 +196,54 @@ nav ul li a:hover {
 .github {
     background-color: black;
 }
+
+/* Base styles (Mobile) */
+body {
+    font-size: 16px;
+    color: #333;
+}
+
+/* Tablet styles */
+@media (min-width: 768px) {
+    h1 {
+        font-size: 24px;  
+        color: #444;      
+    }
+    ul {
+        margin: 20px;    
+        background-color: #f0f0f0;  
+    }
+    .name {
+        font-size: 22px; 
+        font-style: italic; 
+    }
+}
+
+/* Desktop styles */
+@media (min-width: 1024px) {
+    h1 {
+        font-size: 32px;  
+        color: #555;      
+    }
+    ul {
+        margin: 30px;    
+        background-color: #e0e0e0;  
+    }
+    .name {
+        font-size: 28px; 
+        font-style: normal; 
+    }
+}
+
+/* STRETCH GOAL */
+.experience-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.connect-section {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 10px;
+}
