@@ -31,3 +31,88 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+
+const messageForm = document.forms['leave_message'];
+
+messageForm.addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    const userName = event.target.usersName.value;
+    const userEmail = event.target.usersEmail.value;
+    const userMessage = event.target.usersMessage.value;
+
+    console.log(`Name: ${userName}`);
+    console.log(`Email: ${userEmail}`);
+    console.log(`Message: ${userMessage}`);
+});
+      
+document.addEventListener('DOMContentLoaded', function() {
+    const messageForm = document.forms['leave_message'];
+    messageForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const userName = event.currentTarget.usersName.value;
+        const userEmail = event.currentTarget.usersEmail.value;
+        const userMessage = event.currentTarget.usersMessage.value;
+
+        console.log(`Name: ${userName}`);
+        console.log(`Email: ${userEmail}`);
+        console.log(`Message: ${userMessage}`);
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const messageForm = document.forms['leave_message'];
+
+    if (!messageForm) {
+        console.error('Form with name "leave_message" not found.');
+        return;
+    }
+
+    messageForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const userName = event.currentTarget.usersName.value;
+        const userEmail = event.currentTarget.usersEmail.value;
+        const userMessage = event.currentTarget.usersMessage.value;
+
+        const messageSection = document.getElementById('messages');
+
+        if (!messageSection) {
+            console.error('Element with id "messages" not found.');
+            return;
+        }
+
+        const messageList = messageSection.querySelector('ul');
+
+        if (!messageList) {
+            console.error('Unordered list not found within the messages section.');
+            return;
+        }
+
+        const newMessage = document.createElement('li');
+        newMessage.innerHTML = `
+            <a href="mailto:${userEmail}">${userName}</a>
+            <span> says: ${userMessage}</span>
+        `;
+
+        const removeButton = document.createElement('button');
+        removeButton.innerText = 'remove';
+        removeButton.type = 'button';
+
+        removeButton.addEventListener('click', function() {
+            const entry = removeButton.parentNode;
+            entry.remove();
+
+            if (messageList.children.length === 0) {
+                messageSection.style.display = 'none';
+            }
+        });
+
+        newMessage.appendChild(removeButton);
+        messageList.appendChild(newMessage);
+
+        messageSection.style.display = 'block';
+        messageForm.reset();
+    });
+});
