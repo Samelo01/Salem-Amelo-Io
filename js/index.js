@@ -116,3 +116,81 @@ document.addEventListener('DOMContentLoaded', function() {
         messageForm.reset();
     });
 });
+
+
+// CREATING MY FETCH
+
+// document.addEventListener('DOMContentLoaded', () => {
+//     console.log('DOM fully loaded and parsed');
+    
+//     const projectSection = document.getElementById('projects');
+//     if (!projectSection) {
+//         console.error('The "projects" section was not found in the HTML.');
+//         console.log('Document body:', document.body.innerHTML); // Add this line
+//         return;
+//     }
+
+//     const projectList = projectSection.querySelector('ul');
+//     if (!projectList) {
+//         console.error('The "ul" element was not found within the "projects" section.');
+//         return;
+//     }
+
+//     fetch('https://api.github.com/users/Samelo01/repos')
+//         .then(response => response.json())
+//         .then(data => {
+//             const repositories = data;
+//             console.log(repositories);
+
+//             for (let i = 0; i < repositories.length; i++) {
+//                 const project = document.createElement('li');
+//                 project.innerText = repositories[i].name;
+//                 projectList.appendChild(project);
+//             }
+//         })
+//         .catch(error => {
+//             console.error('Error fetching repos:', error);
+
+//             if (projectSection) {
+//                 projectSection.innerHTML = 'Unable to load projects. Please try again later.';
+//             }
+//         });
+// });
+
+document.addEventListener('DOMContentLoaded', () => {
+    fetch('https://api.github.com/users/Samelo01/repos')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            const repositories = data;
+            console.log(repositories);
+            const projectSection = document.getElementById('Projects');
+            if (!projectSection) {
+                console.error('The "Projects" section was not found in the HTML.');
+                return;
+            }
+
+            const projectList = projectSection.querySelector('ul');
+            if (!projectList) {
+                console.error('The "ul" element was not found within the "Projects" section.');
+                return;
+            }
+            for (let i = 0; i < repositories.length; i++) {
+                const project = document.createElement('li');
+                project.innerText = repositories[i].name;
+                projectList.appendChild(project);
+            }
+        })
+        .catch(error => {
+            console.error('Error fetching repos:', error);
+
+            const projectSection = document.getElementById('projects');
+            if (projectSection) {
+                projectSection.innerHTML = 'Unable to load projects. Please try again later.';
+            }
+        });
+});
